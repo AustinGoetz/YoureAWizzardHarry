@@ -29,9 +29,10 @@ class MainTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "guessCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "guessCell", for: indexPath) as? HouseGuessTableViewCell else { return UITableViewCell() }
 
-        // Configure the cell...
+        let guessToDisplay = HouseGuessController.shared.fetchedResultsController.object(at: indexPath)
+        cell.guess = guessToDisplay
 
         return cell
     }

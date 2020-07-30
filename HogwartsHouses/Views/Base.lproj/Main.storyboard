@@ -15,7 +15,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="guessCell" rowHeight="81" id="Qzq-8t-Y2d">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="guessCell" rowHeight="81" id="Qzq-8t-Y2d" customClass="HouseGuessTableViewCell" customModule="HogwartsHouses" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="81"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qzq-8t-Y2d" id="0Au-6d-ZXo">
@@ -28,6 +28,9 @@
                                                 <constraint firstAttribute="width" secondItem="QQ9-tQ-QVP" secondAttribute="height" multiplier="1:1" id="Zpm-9m-ZID"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="hogwarts"/>
+                                            <connections>
+                                                <action selector="houseImageButtonTapped:" destination="Qzq-8t-Y2d" eventType="touchUpInside" id="Hjd-ry-VDK"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSv-q4-8D6">
                                             <rect key="frame" x="32" y="30" width="292" height="21"/>
@@ -45,6 +48,10 @@
                                         <constraint firstItem="QQ9-tQ-QVP" firstAttribute="leading" secondItem="SSv-q4-8D6" secondAttribute="trailing" constant="12" id="yV2-GF-jtp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="houseImageButton" destination="QQ9-tQ-QVP" id="Ifu-Bt-G41"/>
+                                    <outlet property="personGuessLabel" destination="SSv-q4-8D6" id="hYm-Cc-pb3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
