@@ -52,4 +52,31 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return HouseGuessController.shared.fetchedResultsController.sectionIndexTitles[section] == "0" ? "Invisibility Cloak" : "Visibile"
     }
+    
+    // MARK: - Helpers
+    func presentAlertController() {
+        let alertController = UIAlertController(title: "Add House Guess", message: nil, preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Person's name..."
+        }
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Person's Hogwarts house..."
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let addGuessAction = UIAlertAction(title: "Add", style: .default) { (_)
+            in
+            guard let guessName = alertController.textFields![0].text, !guessName.isEmpty, let house =
+                alertController.textFields![1].text, !house.isEmpty else {return}
+            HouseGuessController.shared.createGuess(guessName: guessName, house: house)
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(addGuessAction)
+        
+        present(alertController, animated: true)
+    }
 } // End of Class
