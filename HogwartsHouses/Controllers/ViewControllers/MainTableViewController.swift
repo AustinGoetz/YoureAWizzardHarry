@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainTableViewController: UITableViewController {
 
@@ -16,6 +17,7 @@ class MainTableViewController: UITableViewController {
     
     // MARK: - Actions
     @IBAction func addGuessButtonTapped(_ sender: Any) {
+        presentAlertController()
     }
     
 
@@ -80,3 +82,52 @@ class MainTableViewController: UITableViewController {
         present(alertController, animated: true)
     }
 } // End of Class
+
+// MARK: - Extensions
+// FetchedResultsControllerDelegate
+extension MainTableViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        self.tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        
+        switch type {
+        case .insert:
+            let indexSet = IndexSet(integer: sectionIndex)
+            tableView.insertSections(indexSet, with: .automatic)
+            
+            case .delete:
+                let indexSet = IndexSet(integer: sectionIndex)
+                tableView.deleteSections(indexSet, with: .automatic)
+                
+            default:
+                fatalError()
+        }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        
+        switch type {
+        case .delete:
+            guard let indexPath = indexPath else {return}
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        case .insert:
+            guard let newIndexPath = newIndexPath else {return}
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .move:
+            guard let oldIndexPath = indexPath, let newIndexPath = newIndexPath else {return}
+            tableView.moveRow(at: oldIndexPath, to: newIndexPath)
+        case .update:
+            guard let indexPath = indexPath else {return}
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        @unknown default:
+            fatalError()
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+}
