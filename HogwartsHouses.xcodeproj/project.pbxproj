@@ -15,6 +15,8 @@
 		2A9E76A324D354880035B2B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E76A124D354880035B2B7 /* LaunchScreen.storyboard */; };
 		2A9E76AF24D357830035B2B7 /* HogwartsHouses+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E76AE24D357830035B2B7 /* HogwartsHouses+Convenience.swift */; };
 		2A9E76B124D357D90035B2B7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E76B024D357D90035B2B7 /* CoreDataStack.swift */; };
+		2A9E76B524D35AB50035B2B7 /* HouseGuessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E76B424D35AB50035B2B7 /* HouseGuessController.swift */; };
+		2A9E76B724D35DDC0035B2B7 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E76B624D35DDC0035B2B7 /* MainTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		2A9E76A424D354880035B2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A9E76AE24D357830035B2B7 /* HogwartsHouses+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HogwartsHouses+Convenience.swift"; sourceTree = "<group>"; };
 		2A9E76B024D357D90035B2B7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		2A9E76B424D35AB50035B2B7 /* HouseGuessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseGuessController.swift; sourceTree = "<group>"; };
+		2A9E76B624D35DDC0035B2B7 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		2A9E76AB24D355990035B2B7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A9E76B324D35A8C0035B2B7 /* ModelControllers */,
+				2A9E76B224D35A830035B2B7 /* ViewControllers */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -103,6 +109,22 @@
 				2A9E76B024D357D90035B2B7 /* CoreDataStack.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2A9E76B224D35A830035B2B7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E76B624D35DDC0035B2B7 /* MainTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2A9E76B324D35A8C0035B2B7 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E76B424D35AB50035B2B7 /* HouseGuessController.swift */,
+			);
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,11 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9E76B524D35AB50035B2B7 /* HouseGuessController.swift in Sources */,
 				2A9E76B124D357D90035B2B7 /* CoreDataStack.swift in Sources */,
 				2A9E769E24D354870035B2B7 /* HogwartsHouses.xcdatamodeld in Sources */,
 				2A9E769424D354870035B2B7 /* AppDelegate.swift in Sources */,
 				2A9E76AF24D357830035B2B7 /* HogwartsHouses+Convenience.swift in Sources */,
 				2A9E769624D354870035B2B7 /* SceneDelegate.swift in Sources */,
+				2A9E76B724D35DDC0035B2B7 /* MainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
