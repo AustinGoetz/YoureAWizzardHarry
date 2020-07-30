@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A9E769424D354870035B2B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E769324D354870035B2B7 /* AppDelegate.swift */; };
 		2A9E769624D354870035B2B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E769524D354870035B2B7 /* SceneDelegate.swift */; };
-		2A9E769824D354870035B2B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E769724D354870035B2B7 /* ViewController.swift */; };
 		2A9E769B24D354870035B2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E769924D354870035B2B7 /* Main.storyboard */; };
 		2A9E769E24D354870035B2B7 /* HogwartsHouses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E769C24D354870035B2B7 /* HogwartsHouses.xcdatamodeld */; };
 		2A9E76A024D354880035B2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E769F24D354880035B2B7 /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		2A9E769024D354870035B2B7 /* HogwartsHouses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HogwartsHouses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9E769324D354870035B2B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A9E769524D354870035B2B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A9E769724D354870035B2B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A9E769A24D354870035B2B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A9E769D24D354870035B2B7 /* HogwartsHouses.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HogwartsHouses.xcdatamodel; sourceTree = "<group>"; };
 		2A9E769F24D354880035B2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,16 +56,47 @@
 		2A9E769224D354870035B2B7 /* HogwartsHouses */ = {
 			isa = PBXGroup;
 			children = (
+				2A9E769C24D354870035B2B7 /* HogwartsHouses.xcdatamodeld */,
+				2A9E76AD24D355A10035B2B7 /* Models */,
+				2A9E76AC24D3559E0035B2B7 /* Views */,
+				2A9E76AB24D355990035B2B7 /* Controllers */,
+				2A9E76AA24D3558B0035B2B7 /* Resources */,
+			);
+			path = HogwartsHouses;
+			sourceTree = "<group>";
+		};
+		2A9E76AA24D3558B0035B2B7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				2A9E769324D354870035B2B7 /* AppDelegate.swift */,
 				2A9E769524D354870035B2B7 /* SceneDelegate.swift */,
-				2A9E769724D354870035B2B7 /* ViewController.swift */,
-				2A9E769924D354870035B2B7 /* Main.storyboard */,
 				2A9E769F24D354880035B2B7 /* Assets.xcassets */,
 				2A9E76A124D354880035B2B7 /* LaunchScreen.storyboard */,
 				2A9E76A424D354880035B2B7 /* Info.plist */,
-				2A9E769C24D354870035B2B7 /* HogwartsHouses.xcdatamodeld */,
 			);
-			path = HogwartsHouses;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A9E76AB24D355990035B2B7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2A9E76AC24D3559E0035B2B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A9E769924D354870035B2B7 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A9E76AD24D355A10035B2B7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +170,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A9E769824D354870035B2B7 /* ViewController.swift in Sources */,
 				2A9E769E24D354870035B2B7 /* HogwartsHouses.xcdatamodeld in Sources */,
 				2A9E769424D354870035B2B7 /* AppDelegate.swift in Sources */,
 				2A9E769624D354870035B2B7 /* SceneDelegate.swift in Sources */,
