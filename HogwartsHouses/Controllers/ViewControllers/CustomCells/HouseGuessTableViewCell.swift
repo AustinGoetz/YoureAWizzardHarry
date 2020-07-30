@@ -9,6 +9,9 @@
 import UIKit
 
 // MARK: - Protocols
+protocol HouseGuessTableViewCellDelegate: class {
+    func houseButtonTapped(_ sender: HouseGuessTableViewCell)
+}
 
 class HouseGuessTableViewCell: UITableViewCell {
 
@@ -17,6 +20,8 @@ class HouseGuessTableViewCell: UITableViewCell {
     @IBOutlet weak var houseImageButton: UIButton!
     
     // MARK: - Class Properties
+    weak var delegate: HouseGuessTableViewCellDelegate?
+    
     var guess: HouseGuess? {
         didSet {
             updateViews()
@@ -25,13 +30,14 @@ class HouseGuessTableViewCell: UITableViewCell {
     
     // MARK: - Actions
     @IBAction func houseImageButtonTapped(_ sender: Any) {
+        delegate?.houseButtonTapped(self)
     }
     
     // MARK: - Helpers
     func updateViews() {
         guard let guess = guess else { return }
         personGuessLabel.text = guess.guessName
-        
+        updateButtonFor(guess: guess)
     }
     
     func updateButtonFor(guess: HouseGuess) {

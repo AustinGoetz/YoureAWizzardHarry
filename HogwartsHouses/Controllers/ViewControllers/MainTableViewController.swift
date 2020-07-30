@@ -13,6 +13,8 @@ class MainTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HouseGuessController.shared.fetchedResultsController.delegate = self
     }
     
     // MARK: - Actions
@@ -35,15 +37,16 @@ class MainTableViewController: UITableViewController {
 
         let guessToDisplay = HouseGuessController.shared.fetchedResultsController.object(at: indexPath)
         cell.guess = guessToDisplay
+        cell.delegate = self
 
         return cell
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
             let guessToDelete = HouseGuessController.shared.fetchedResultsController.object(at: indexPath)
             HouseGuessController.shared.remove(houseGuess: guessToDelete)
-            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
@@ -129,5 +132,14 @@ extension MainTableViewController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+}
+
+extension MainTableViewController: HouseGuessTableViewCellDelegate {
+    func houseButtonTapped(_ sender: HouseGuessTableViewCell) {
+        guard let index = tableView.indexPath(for: sender) else { return }
+        let guess = HouseGuessController.shared.fetchedResultsController.object(at: index)
+        HouseGuessController.shared.toggleVisibility(houseGuess: guess)
+        sender.updateViews()
     }
 }
