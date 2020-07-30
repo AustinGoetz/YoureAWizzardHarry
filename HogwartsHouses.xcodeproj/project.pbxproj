@@ -13,6 +13,8 @@
 		2A9E769E24D354870035B2B7 /* HogwartsHouses.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E769C24D354870035B2B7 /* HogwartsHouses.xcdatamodeld */; };
 		2A9E76A024D354880035B2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E769F24D354880035B2B7 /* Assets.xcassets */; };
 		2A9E76A324D354880035B2B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9E76A124D354880035B2B7 /* LaunchScreen.storyboard */; };
+		2A9E76AF24D357830035B2B7 /* HogwartsHouses+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E76AE24D357830035B2B7 /* HogwartsHouses+Convenience.swift */; };
+		2A9E76B124D357D90035B2B7 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9E76B024D357D90035B2B7 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2A9E769F24D354880035B2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A9E76A224D354880035B2B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A9E76A424D354880035B2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9E76AE24D357830035B2B7 /* HogwartsHouses+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HogwartsHouses+Convenience.swift"; sourceTree = "<group>"; };
+		2A9E76B024D357D90035B2B7 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		2A9E76AD24D355A10035B2B7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2A9E76AE24D357830035B2B7 /* HogwartsHouses+Convenience.swift */,
+				2A9E76B024D357D90035B2B7 /* CoreDataStack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,8 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9E76B124D357D90035B2B7 /* CoreDataStack.swift in Sources */,
 				2A9E769E24D354870035B2B7 /* HogwartsHouses.xcdatamodeld in Sources */,
 				2A9E769424D354870035B2B7 /* AppDelegate.swift in Sources */,
+				2A9E76AF24D357830035B2B7 /* HogwartsHouses+Convenience.swift in Sources */,
 				2A9E769624D354870035B2B7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
